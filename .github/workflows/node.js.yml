@@ -27,6 +27,6 @@ jobs:
     - run: yarn install
     - run: yarn build
     - run: yarn deploy
-      if: github.ref == 'refs/heads/master' && node-version === "14.x"
+      if: github.ref == 'refs/heads/master' && matrix.node-version == '14.x'
       env:
         GITHUB_TOKEN: ${{ secrets.github_token }}
